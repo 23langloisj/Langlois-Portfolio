@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Body */
+body {
+  font-family: 'Caveat', cursive;
+  background-color: #659DBD;
+}
+
+/* Navbar */
+.hover-pointer {
+  @apply hover:cursor-pointer;
+}
+
+.nav-logo {
+  @apply text-[#c2edda] text-2xl xl:text-3xl font-bold tracking-tight;
+}
+
+.nav-item {
+  @apply text-base xl:text-xl;
+}
+
+.northeastern-color {
+  color: #E31C25;
+}
+
+.horizontal-gradient {
+  background: linear-gradient(to right, #1BD7BB, #2AF598);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.seperator-line {
+  @apply border-t border-gray-600 pt-2 sm:pt-3;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+.animation-gradient {
+  background: linear-gradient(90deg, #17d2c4, #91fff7, #4663ac, #4efff2);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s infinite;
+}
+
+.northeastern-animation {
+  color: linear-gradient(90deg, #17d2c4, #91fff7, #2f4f4f, #4efff2);
+  animation: gradientAnimation 3s infinite;
+}
+
+.color{
+  @apply hover:text-[#c2edda];
+}
+
+.text-green {
+  color: #c2edda;
+}
+
+.instagram-icon:hover {
+  color: #e4405f; /* Instagram's brand color */
+}
+
+.mail-icon:hover {
+  color: #0072C6; /* Outlook's mail color */
+}
+
+.instagram-color {
+  color: #e4405f;
+}
+
+.mail-color {
+  color: #0072C6;
+}
+
+.linkedin-icon:hover {
+  color: #0077b5;
+}
+
+.github-icon:hover {
+  color: #6e5494;
+}
+
