@@ -52,23 +52,23 @@ useEffect(() => {
               </h2>
             <p className="about-text text-3xl p-4 text-gray-800">
             I am an Honors Computer Science student with a Math minor at
-            <span className="font-bold text-black"> <a href="https://www.northeastern.edu/" target="_blank">Northeastern University. </a></span>
+            <span className="font-bold text-black"> <a href="https://www.northeastern.edu/">Northeastern University. </a></span>
             I&apos;m currently in my first year, actively seeking
             opportunities for internships in the field of software
             engineering for the 
             <span className="font-bold text-black"> Summer of 2024.</span>
           </p>
           <p className="about-me text-3xl text-gray-800">
-            Currently, I'm working as an intern for the startup
-            <span className="font-bold text-black"> <a href="https://afterflea.com/" target="_blank">AfterFlea AIOS </a></span>
+            Currently, I am working as an intern for the startup
+            <span className="font-bold text-black"> <a href="https://afterflea.com/">AfterFlea AIOS </a></span>
             and have gotten the chance to contribute to cutting edge conversational AI.
-            At Northeastern, I've joined Oasis and created
+            At Northeastern, I have joined Oasis and created
             my first full-stack web application. Currently, I am a member of the Northeastern Electric Racing software
-            team and am working on the product <span className="font-bold text-black"><a href="https://finishlinebyner.com/login" target="_blank"> Finish Line </a></span>
+            team and am working on the product <span className="font-bold text-black"><a href="https://finishlinebyner.com/login"> Finish Line </a></span>
           </p>
           <p className="about-me text-3xl mt-4 text-gray-800">
             Aside from CS, I am involved in the professional business
-            fraternity <span className="font-bold text-black"><a href="https://www.akpsineu.org/" target="_blank">Alpha Kappa Psi </a></span> 
+            fraternity <span className="font-bold text-black"><a href="https://www.akpsineu.org/">Alpha Kappa Psi </a></span> 
             and enjoy playing video games, hiking, climbing, and swimming!
           </p>
           </div>
@@ -82,7 +82,7 @@ useEffect(() => {
                 <h1 className="mt-2 text-3xl flex justify-center">
                   <span className="pr-2"><a href={`mailto:${emailAddress}`} onClick={handleEmailClick}><AiOutlineMail className="mail-icon duration-300"/></a></span>
                   Talk to me about:
-                  <span className="pl-3 "><a href="https://www.instagram.com/jake.langlois1/" target="_blank"><FaInstagram className="instagram-icon duration-300"/></a></span>
+                  <span className="pl-3 "><a href="https://www.instagram.com/jake.langlois1/" ><FaInstagram className="instagram-icon duration-300"/></a></span>
                 </h1>
                 <h1 className="text-3xl font-bold">
                   <span ref={interestsRef}></span>
