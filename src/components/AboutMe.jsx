@@ -59,12 +59,12 @@ useEffect(() => {
             <span className="font-bold text-black"> Summer of 2024.</span>
           </p>
           <p className="about-me text-3xl text-gray-800">
-            In the past, I've worked as an intern for
-            <span className="font-bold text-black"> <a href="https://www.orau.org/arc-ornl/high-school/video.html" target="_blank">Oak Ridge National Labratory </a></span>
-            and wrote software for autonomous robot navigation.
+            Currently, I'm working as an intern for the startup
+            <span className="font-bold text-black"> <a href="https://afterflea.com/" target="_blank">AfterFlea AIOS </a></span>
+            and have gotten the chance to contribute to cutting edge conversational AI.
             At Northeastern, I've joined Oasis and created
-            my first full-stack web application. Currently, I am exploring
-            more CS clubs.
+            my first full-stack web application. Currently, I am a member of the Northeastern Electric Racing software
+            team and am working on the product <span className="font-bold text-black"><a href="https://finishlinebyner.com/login" target="_blank"> Finish Line </a></span>
           </p>
           <p className="about-me text-3xl mt-4 text-gray-800">
             Aside from CS, I am involved in the professional business
