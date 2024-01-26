@@ -51,7 +51,7 @@ useEffect(() => {
               About Me
               </h2>
             <p className="about-text text-3xl p-4 text-gray-800">
-            I am an Honors Computer Science student with a Math minor at
+            I am an Honors Computer Science and Math student at
             <span className="font-bold text-black"> <a href="https://www.northeastern.edu/">Northeastern University. </a></span>
             I&apos;m currently in my first year, actively seeking
             opportunities for internships in the field of software
