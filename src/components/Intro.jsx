@@ -10,7 +10,7 @@ const Intro = () => {
         <div className="flex items-center justify-center h-screen mb-8">
             <div className="text-center">
                 <h1 className = "text-white text-center text-6xl font-bold">Hi! I'm <span className ="horizontal-gradient">Jake Langlois</span></h1>
-                <p className = "text-white font-bold text-2xl text-center mt-4">I'm an aspiring Software Engineer studying CS @ 
+                <p className = "text-white font-bold text-2xl text-center mt-4">I'm an aspiring Software Engineer studying CS and Math @ 
                 <span className="northeastern-color"> Northeastern University</span> 
                 </p>
                 <div className="flex items-center justify-center space-x-4 text-center">
