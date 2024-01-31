@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import { Link } from 'react-scroll';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import AnimatedBackground from "./AnimatedBackground";
 
 
 const Intro = () => {   
     
     return (
     <header>
+        <AnimatedBackground />
         <div className="flex items-center justify-center h-screen mb-8">
             <div className="text-center">
                 <h1 className = "text-white text-center text-6xl font-bold">Hi! I'm <span className ="horizontal-gradient">Jake Langlois</span></h1>

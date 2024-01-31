@@ -6,7 +6,7 @@ const Navbar = () => {
     { label: "Projects", href: "projects" },
   ];
 
-  const resumeLink = "Jacob-Langlois-Resume.pdf";
+  const resumeLink = "/Users/jake.langlois/Desktop/Jake Langlois CS+Math Resume.pdf";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 p-3 backdrop-blur bg-opacity-50" id="top">
