@@ -1,5 +1,6 @@
 import peaceofmind from '../assets/peaceofmind.png';
 import langbot from '../assets/langbot.png';
+import neurojump from '../assets/neurojump.png';
 
 const projects = [
     {
@@ -18,6 +19,15 @@ const projects = [
         live: null,
         code: "https://github.com/23langloisj/LangBot",
         technologies: ["JavaScript", "NodeJS", "DiscordJS"],
+    },
+
+    {
+        image: neurojump,
+        title: "NeuroJump",
+        description: "NeuroJump is a simple machine learning-based jumping game developed using Pygame and NeuroEvolution of Augmenting Topologies",
+        live: null,
+        code: "https://github.com/23langloisj/NeuroJump",
+        technologies: ["Python", "Pygame", "NEAT-Python"]
     },
 ];
 
