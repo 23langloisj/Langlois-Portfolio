@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from 'react-scroll';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import AnimatedBackground from "./AnimatedBackground";
 
 
 const Intro = () => {   

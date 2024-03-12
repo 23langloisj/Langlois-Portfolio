@@ -56,13 +56,10 @@ useEffect(() => {
             I&apos;m currently in my first year, actively seeking
             opportunities for internships in the field of software
             engineering for the 
-            <span className="font-bold text-black"> Summer of 2024.</span>
+            <span className="font-bold text-black"> Summer of 2025.</span>
           </p>
           <p className="about-me text-3xl text-gray-800">
-            Currently, I am working as an intern for the startup
-            <span className="font-bold text-black"> <a href="https://afterflea.com/">AfterFlea AIOS </a></span>
-            and have gotten the chance to contribute to cutting edge conversational AI.
-            At Northeastern, I have joined Oasis and created
+            At Northeastern, I have joined a web-dev club called Oasis and created
             my first full-stack web application. Currently, I am a member of the Northeastern Electric Racing software
             team and am working on the product <span className="font-bold text-black"><a href="https://finishlinebyner.com/login"> Finish Line </a></span>
           </p>
@@ -77,7 +74,7 @@ useEffect(() => {
                 <img
                 src ={headshot}
                 alt="headshot"
-                className="rounded-lg w-40 md:w-4 lg:w-48 h-auto mx-auto mt-4">
+                className="rounded-lg w-52 md:w-56 lg:w-64 h-auto mx-auto mt-4">
                 </img>
                 <h1 className="mt-2 text-3xl flex justify-center">
                   <span className="pr-2"><a href={`mailto:${emailAddress}`} onClick={handleEmailClick}><AiOutlineMail className="mail-icon duration-300"/></a></span>

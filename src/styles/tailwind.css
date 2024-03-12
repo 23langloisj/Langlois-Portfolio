@@ -5,7 +5,7 @@
 /* Body */
 body {
   font-family: 'Caveat', cursive;
-  background-color: #659DBD;
+  background-color: #659dbd;
 }
 
 /* Navbar */
@@ -22,11 +22,11 @@ body {
 }
 
 .northeastern-color {
-  color: #E31C25;
+  color: #e31c25;
 }
 
 .horizontal-gradient {
-  background: linear-gradient(to right, #1BD7BB, #2AF598);
+  background: linear-gradient(to right, #1bd7bb, #2af598);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -58,7 +58,7 @@ body {
   animation: gradientAnimation 3s infinite;
 }
 
-.color{
+.color {
   @apply hover:text-[#c2edda];
 }
 
@@ -71,7 +71,7 @@ body {
 }
 
 .mail-icon:hover {
-  color: #0072C6; /* Outlook's mail color */
+  color: #0072c6; /* Outlook's mail color */
 }
 
 .instagram-color {
@@ -79,7 +79,7 @@ body {
 }
 
 .mail-color {
-  color: #0072C6;
+  color: #0072c6;
 }
 
 .linkedin-icon:hover {
@@ -89,4 +89,3 @@ body {
 .github-icon:hover {
   color: #6e5494;
 }
-

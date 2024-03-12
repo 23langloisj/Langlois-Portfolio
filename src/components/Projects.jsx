@@ -3,15 +3,15 @@ import projects from '../extra/projects.js';
 
 const Projects = () => {
     return (
-        <div className="text-black flex flex-col items-center justify-center pt-10">
+        <div className="text-black flex flex-col items-center justify-center pt-10 pb-24">
             <h2 className="subheading text-5xl font-bold" id="projects">
                 Projects
             </h2>
-            <div className="max-w-6xl mx-auto]]] grid grid-cols-1 md:grid-cols-3 gap-6 py-10 px-4">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 py-10 px-4">
             {projects.map((project, index) => (
                 <div
                     key={index}
-                    className="border-2 border-blue-800 p-4 rounded-lg w-full flex-col text-center items-center transition-transform transform hover:scale-105"
+                    className="border-2 border-blue-800  p-4 rounded-lg w-full flex-col text-center items-center transition-transform transform hover:scale-105"
                     >
                     <div className="flex flex-col items-center h-full">
                         {project.image && (

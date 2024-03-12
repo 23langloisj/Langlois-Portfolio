@@ -1,0 +1,36 @@
+import afterflea from '../assets/afterflea.png';
+import ornl from '../assets/ornl.png';
+import cmu from '../assets/cmu.png';
+import sei from '../assets/sei.png';
+
+const experiences = [
+    {
+        company: "Software Engineering Institute - CMU",
+        role: "Software Developer Intern",
+        description: "Incoming Summer 2024 Intern",
+        live: null,
+        image: cmu,
+        date: "May 2024 - Aug 2024"
+    },
+
+    {
+        company:"AfterFlea AIOS",
+        role: "Software Engineer Intern",
+        description: "As an intern at AfterFlea AIOS, I played a key role in full-stack development using the MERN stack. I focused on integrating OpenAI's API into the project using Python, contributing to the platform's improved functionality. During my internship, I worked on a project centered around prompt engineering and story creation, demonstrating problem-solving skills and creativity.",
+        live: null,
+        image: afterflea,
+        date: "Dec 2023 - Feb 2024"
+    },
+
+    {
+        company: "Oak Ridge National Laboratory",
+        role: "Robotics Intern",
+        description: "During my internship at Oak Ridge National Laboratory (ORNL), I collaborated on a robotics project, refining the path-finding algorithms of autonomous robots. We presented our work to Appalachian region state representatives through a visually informative poster, aiming to highlight the potential benefits of our contributions to autonomous navigation. I played a role in this collective effort, contributing to advancements in robotics research at ORNL.",
+        live: null,
+        image: ornl,
+        date: "Jul 2022 - Aug 2022"
+
+    },
+];
+
+export default experiences
