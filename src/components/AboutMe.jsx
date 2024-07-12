@@ -53,15 +53,19 @@ useEffect(() => {
             <p className="about-text text-3xl p-4 text-gray-800">
             I am an Honors Computer Science and Math student at
             <span className="font-bold text-black"> <a href="https://www.northeastern.edu/">Northeastern University. </a></span>
-            I&apos;m currently in my first year, actively seeking
-            opportunities for internships in the field of software
+            I&apos;m currently in my second year, actively seeking
+            opportunities for Co-ops in the field of software
             engineering for the 
+            <span className="font-bold text-black"> Spring of 2024 </span>
+            as well as internships for the 
             <span className="font-bold text-black"> Summer of 2025.</span>
           </p>
           <p className="about-me text-3xl text-gray-800">
-            At Northeastern, I have joined a web-dev club called Oasis and created
-            my first full-stack web application. Currently, I am a member of the Northeastern Electric Racing software
-            team and am working on the product <span className="font-bold text-black"><a href="https://finishlinebyner.com/login"> Finish Line </a></span>
+            Currently I am interning for the <span className="font-bold text-black"> <a href="https://www.sei.cmu.edu/">SEI @ CMU </a></span> 
+            and am working for the CERT Cyber
+            Mission Readiness team.
+            In the Fall I'll be working as a TA for <span className="font-bold text-black"> <a href="https://www.khoury.northeastern.edu/home/rachlin/ds/ds3000_ds5110/">DS3000</a></span>, 
+            helping students with the foundations of Data Science!
           </p>
           <p className="about-me text-3xl mt-4 text-gray-800">
             Aside from CS, I am involved in the professional business
