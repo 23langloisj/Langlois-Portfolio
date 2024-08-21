@@ -61,11 +61,11 @@ useEffect(() => {
             <span className="font-bold text-black"> Summer of 2025.</span>
           </p>
           <p className="about-me text-3xl text-gray-800">
-            Currently I am interning for the <span className="font-bold text-black"> <a href="https://www.sei.cmu.edu/">SEI @ CMU </a></span> 
-            and am working for the CERT Cyber
+            Previously, I have interned for the <span className="font-bold text-black"> <a href="https://www.sei.cmu.edu/">SEI @ CMU, </a></span> 
+            working with the CERT Cyber
             Mission Readiness team.
-            In the Fall I'll be working as a TA for <span className="font-bold text-black"> <a href="https://www.khoury.northeastern.edu/home/rachlin/ds/ds3000_ds5110/">DS3000</a></span>, 
-            helping students with the foundations of Data Science!
+            This the Fall I'll be working as a TA for <span className="font-bold text-black"> <a href="https://www.khoury.northeastern.edu/home/rachlin/ds/ds3000_ds5110/">DS3000</a></span>, 
+            as well as working as a developer with Sandbox @ Northeastern!
           </p>
           <p className="about-me text-3xl mt-4 text-gray-800">
             Aside from CS, I am involved in the professional business
