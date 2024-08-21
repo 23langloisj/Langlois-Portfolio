@@ -1,5 +1,5 @@
 import peaceofmind from '../assets/peaceofmind.png';
-import langbot from '../assets/langbot.png';
+import ghosts from '../assets/ghosts.png';
 import neurojump from '../assets/neurojump.png';
 
 const projects = [
@@ -13,12 +13,12 @@ const projects = [
     },
 
     {
-        image: langbot,
-        title: "LangBot",
-        description: "LangBot: Bring fun to your discord server, one command at a time :)",
+        image: ghosts,
+        title: "GHOSTS LITE",
+        description: "GHOSTS LITE is a streamlined version of the GHOSTS framework designed to simulate realistic network without the expense of running actual applications",
         live: null,
-        code: "https://github.com/23langloisj/LangBot",
-        technologies: ["JavaScript", "NodeJS", "DiscordJS"],
+        code: "https://github.com/23langloisj/GHOSTS/tree/master/src/Ghosts.Client.Lite",
+        technologies: [".NET", "C#"],
     },
 
     {
