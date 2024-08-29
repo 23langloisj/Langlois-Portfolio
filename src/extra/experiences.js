@@ -2,8 +2,28 @@ import afterflea from '../assets/afterflea.png';
 import ornl from '../assets/ornl.png';
 import cmu from '../assets/cmu.png';
 import sei from '../assets/sei.png';
+import khoury from '../assets/khoury.jpeg';
+import sandbox from '../assets/sandbox.png'
 
 const experiences = [
+    {
+        company: "Khoury College of Computer Sciences",
+        role: "DS3000 - Teaching Assistant",
+        description: "",
+        live: null,
+        image: khoury,
+        date: "Aug 2024 - Present"
+    },
+
+    {
+        company: "Sandbox @ Northeastern",
+        role: "Software Developer",
+        description: "",
+        live: null,
+        image: sandbox,
+        date: "Aug 2024 - Present"
+    },
+
     {
         company: "Software Engineering Institute - CMU",
         role: "Software Developer Intern",

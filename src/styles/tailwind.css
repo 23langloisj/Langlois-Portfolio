@@ -8,6 +8,10 @@ body {
   background-color: #659dbd;
 }
 
+.timeline-date {
+  @apply font-bold text-xl;
+}
+
 /* Navbar */
 .hover-pointer {
   @apply hover:cursor-pointer;
