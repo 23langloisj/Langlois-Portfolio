@@ -4,6 +4,7 @@ const Navbar = () => {
   const navItems = [
     { label: "About Me", href: "about-me" },
     { label: "Projects", href: "projects" },
+    { label: "Experiences", href: "experiences" }
   ];
 
   const resumeLink = "Jacob-Langlois-Resume.pdf";
