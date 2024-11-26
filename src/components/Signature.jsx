@@ -1,27 +1,39 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Suggestions = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  // Load suggestions from localStorage when the component mounts
+  // Load suggestions from the backend when the component mounts
   useEffect(() => {
-    const storedSuggestions = JSON.parse(localStorage.getItem("suggestions")) || [];
-    setSuggestions(storedSuggestions);
+    const fetchSuggestions = async () => {
+      try {
+        const response = await axios.get("http://localhost:5001/api/suggestions");
+        setSuggestions(response.data);
+      } catch (error) {
+        console.error("Error fetching suggestions:", error);
+      }
+    };
+    fetchSuggestions();
   }, []);
 
-  // Save suggestions to localStorage
-  const saveSuggestion = () => {
+  // Save suggestion to the backend
+  const saveSuggestion = async () => {
     if (name && message) {
       const newSuggestion = { name, message };
-      const updatedSuggestions = [...suggestions, newSuggestion];
-      setSuggestions(updatedSuggestions);
-      localStorage.setItem("suggestions", JSON.stringify(updatedSuggestions));
 
-      // Clear the form
-      setName("");
-      setMessage("");
+      try {
+        await axios.post("http://localhost:5001/api/suggestions", newSuggestion);
+        setSuggestions((prev) => [...prev, newSuggestion]);
+
+        // Clear the form
+        setName("");
+        setMessage("");
+      } catch (error) {
+        console.error("Error saving suggestion:", error);
+      }
     }
   };
 
