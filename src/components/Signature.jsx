@@ -10,7 +10,7 @@ const Suggestions = () => {
   useEffect(() => {
     const fetchSuggestions = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/suggestions");
+        const response = await axios.get("https://jakelanglois.com/.netlify/functions/getSuggestion");
         setSuggestions(response.data);
       } catch (error) {
         console.error("Error fetching suggestions:", error);
@@ -25,7 +25,7 @@ const Suggestions = () => {
       const newSuggestion = { name, message };
 
       try {
-        await axios.post("http://localhost:5001/api/suggestions", newSuggestion);
+        await axios.post("https://jakelanglois.com/.netlify/functions/addSuggestion", newSuggestion);
         setSuggestions((prev) => [...prev, newSuggestion]);
 
         // Clear the form
@@ -40,7 +40,7 @@ const Suggestions = () => {
   return (
     <section id="suggestions" className="mt-10 p-5">
       <h2 className="text-2xl font-semibold mb-4">
-        If you're here, say hi! Or leave a suggestion on what I should try to make:
+        If you&#39;re here, say hi! Or leave a suggestion on what I should try to make:
       </h2>
 
       {/* Suggestion Form */}
