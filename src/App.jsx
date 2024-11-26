@@ -23,12 +23,12 @@ function App() {
                 <AboutMe />
                 <Experience />
                 <Projects />
-                <Footer />
               </>
             }
           />
           <Route path="/sheflang" element={<Sheflang />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
