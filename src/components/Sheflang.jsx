@@ -17,7 +17,7 @@ const Sheflang = () => {
 
   return (
     <div className="py-20 px-6">
-      <h1 className="text-4xl text-center font-bold mb-8">Introducing... Sheflang</h1>
+      <h1 id="sheflang" className="text-4xl text-center font-bold mb-8">Introducing... Sheflang</h1>
       <img 
         src={sheflang} 
         alt="sheflang" 

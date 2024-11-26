@@ -10,24 +10,27 @@ import Sheflang from './components/Sheflang';
 function App() {
   return (
     <Router>
-      {/* Navbar remains at the top */}
-      <Navbar />
+      <div className="flex flex-col min-h-screen">
+        {/* Navbar remains at the top */}
+        <Navbar />
 
-      <div className="mt-16"> 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Intro />
-                <AboutMe />
-                <Experience />
-                <Projects />
-              </>
-            }
-          />
-          <Route path="/sheflang" element={<Sheflang />} />
-        </Routes>
+        <div className="flex-grow mt-16">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Intro />
+                  <AboutMe />
+                  <Experience />
+                  <Projects />
+                </>
+              }
+            />
+            <Route path="/sheflang" element={<Sheflang />} />
+          </Routes>
+        </div>
+
         <Footer />
       </div>
     </Router>
