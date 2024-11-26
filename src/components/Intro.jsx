@@ -7,7 +7,6 @@ const Intro = () => {
     
     return (
     <header>
-
         <div className="flex items-center justify-center h-screen mb-8">
             <div className="text-center">
                 <h1 className = "text-white text-center text-6xl font-bold">Hi! I'm <span className ="horizontal-gradient">Jake Langlois</span></h1>
@@ -30,7 +29,8 @@ const Intro = () => {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
                 }}
                 >
-                    Check Out My Work!</button>
+                    Check Out My Work!
+                </button>
             </div>
         </div>
     </header>

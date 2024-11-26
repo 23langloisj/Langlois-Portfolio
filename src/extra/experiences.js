@@ -1,7 +1,6 @@
 import afterflea from '../assets/afterflea.png';
 import ornl from '../assets/ornl.png';
 import cmu from '../assets/cmu.png';
-import sei from '../assets/sei.png';
 import khoury from '../assets/khoury.jpeg';
 import sandbox from '../assets/sandbox.png'
 
