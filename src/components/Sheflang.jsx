@@ -54,7 +54,7 @@ const Sheflang = () => {
         lore={loreContent}
         name={dishName}
       />
-      <Signature />
+      {/* <Signature /> */}
     </div>
   );
 };
