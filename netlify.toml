@@ -1,7 +1,7 @@
 [build]
   functions = "netlify-functions"
   publish = "build"
-  command = "npm install && npm run build" 
+  command = "npm ci && npm run build"  # Use 'npm ci' for a clean install of dependencies
 
 [context.production.environment]
   NODE_ENV = "production"
