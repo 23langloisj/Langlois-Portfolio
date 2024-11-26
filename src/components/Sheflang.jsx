@@ -2,6 +2,7 @@ import food from "../extra/food";
 import Modal from "./LoreModal";
 import { useState } from "react";
 import sheflang from "../assets/sheflang.png";
+import Signature from "./Signature";
 
 const Sheflang = () => {
   const [showModal, setShowModal] = useState(false);
@@ -53,6 +54,7 @@ const Sheflang = () => {
         lore={loreContent}
         name={dishName}
       />
+      <Signature />
     </div>
   );
 };
