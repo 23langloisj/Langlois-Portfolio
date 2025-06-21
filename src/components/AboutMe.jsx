@@ -53,20 +53,20 @@ useEffect(() => {
             <p className="about-text text-3xl p-4 text-gray-800">
             I am an Honors Computer Science and Math student at
             <span className="font-bold text-black"> <a href="https://www.northeastern.edu/">Northeastern University. </a></span>
-            I&apos;m currently in my second year, actively seeking
+            I&apos;m currently in my third year, actively seeking
             opportunities for Co-ops in the field of software
             engineering for the 
-            <span className="font-bold text-black"> Spring of 2024 </span>
+            <span className="font-bold text-black"> Spring of 2025 </span>
             as well as internships for the 
-            <span className="font-bold text-black"> Summer of 2025.</span>
+            <span className="font-bold text-black"> Summer of 2026.</span>
           </p>
           <p className="about-me text-3xl text-gray-800">
-            Previously, I have interned for the <span className="font-bold text-black"> <a href="https://www.sei.cmu.edu/">SEI @ CMU, </a></span> 
-            working with the CERT Cyber
-            Mission Readiness team.
-            This the Fall I'll be working as a TA for <span className="font-bold text-black"> <a href="https://www.khoury.northeastern.edu/home/rachlin/ds/ds3000_ds5110/">DS3000</a></span>, 
-            as well as working as a developer with Sandbox @ Northeastern!
+            Previously, I worked as a <span className="font-bold text-black">Software Engineer Co-op at <a href="https://www.smartleaf.com/">Smartleaf</a></span>, 
+            where I built out core features for the Advisor Portal and helped automate key investment workflows. Before that, I interned with the <span className="font-bold text-black"><a href="https://www.sei.cmu.edu/">SEI @ CMU</a></span>, 
+            supporting the CERT Cyber Mission Readiness team. Currently, I serve as <span className="font-bold text-black">Technical Lead & Head of DevOps at <a href="https://www.northeasternsandbox.com/">Sandbox @ Northeastern</a></span>, 
+            leading the development of student-facing platforms and managing infrastructure across projects.
           </p>
+
           <p className="about-me text-3xl mt-4 text-gray-800">
             Aside from CS, I am involved in the professional business
             fraternity <span className="font-bold text-black"><a href="https://www.akpsineu.org/">Alpha Kappa Psi </a></span> 

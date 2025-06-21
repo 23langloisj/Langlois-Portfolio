@@ -3,8 +3,17 @@ import ornl from '../assets/ornl.png';
 import cmu from '../assets/cmu.png';
 import khoury from '../assets/khoury.jpeg';
 import sandbox from '../assets/sandbox.png'
+import smartleaf from '../assets/smartleaf.jpeg';
 
 const experiences = [
+    {
+        company: "Smartleaf",
+        role: "Software Engineer Co-op",
+        description: "",
+        live: null,
+        image: smartleaf,
+        date: "Jan 2025 - June 2025"
+    },
     {
         company: "Khoury College of Computer Sciences",
         role: "DS3000 - Teaching Assistant",

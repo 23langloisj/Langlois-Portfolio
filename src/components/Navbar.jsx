@@ -9,7 +9,7 @@ const Navbar = () => {
     { label: "Food", href: "/sheflang" },
   ];
 
-  const resumeLink = "Jacob-Langlois-Resume.pdf";
+  const resumeLink = "Langlois_Resume.pdf";
   const navigate = useNavigate();
 
   const handleNavClick = (href) => {
