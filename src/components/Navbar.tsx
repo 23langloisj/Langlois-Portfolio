@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"; // useNavigate in v6
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
+
+
 const Navbar = () => {
   const navItems = [
     { label: "About Me", href: "about-me" },
