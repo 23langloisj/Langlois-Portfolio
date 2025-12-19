@@ -10,6 +10,13 @@ import soup from '../assets/food/soup.png';
 import tortilla from '../assets/food/tortilla.png';
 import steggs from '../assets/food/steggs.png';
 
+export interface FoodItem {
+  name: string;
+  description: string;
+  image: string;
+  lore: string;
+}
+
 const food = [
     {
       image: pasta,

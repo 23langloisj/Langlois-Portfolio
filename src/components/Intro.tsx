@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-import { Link } from 'react-scroll';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 
@@ -26,7 +24,9 @@ const Intro = () => {
                 <button className="text-white px-4 py-2 rounded mt-1 w-44 animation-gradient"
                 onClick={() => {
                     const targetSection = document.getElementById('projects');
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }}
                 >
                     Check Out My Work!

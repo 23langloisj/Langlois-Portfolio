@@ -2,7 +2,7 @@ import food from "../extra/food";
 import Modal from "./LoreModal";
 import { useState } from "react";
 import sheflang from "../assets/sheflang.png";
-import Signature from "./Signature";
+import { FoodItem } from "../extra/food";
 
 const Sheflang = () => {
   const [showModal, setShowModal] = useState(false);
@@ -10,7 +10,7 @@ const Sheflang = () => {
   const [dishName, setDishName] = useState("");
 
   // Function to open the modal and set the lore content
-  const handleOpenModal = (name, lore) => {
+  const handleOpenModal = (name: string, lore: string) => {
     setLoreContent(lore); 
     setShowModal(true);
     setDishName(name)
@@ -25,7 +25,7 @@ const Sheflang = () => {
         className="rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-auto mt-4 mb-6" 
         />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {food.map((item, index) => (
+        {food.map((item: FoodItem, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Wrapping div for consistent aspect ratio */}
             <div className="relative w-full pb-[56.25%]">

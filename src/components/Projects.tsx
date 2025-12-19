@@ -1,4 +1,5 @@
 import projects from '../extra/projects.js';
+import { ProjectData } from '../extra/projects.js';
 
 
 const Projects = () => {
@@ -8,7 +9,7 @@ const Projects = () => {
                 Projects
             </h2>
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 py-10 px-4">
-            {projects.map((project, index) => (
+            {projects.map((project: ProjectData, index) => (
                 <div
                     key={index}
                     className="border-2 border-blue-800  p-4 rounded-lg w-full flex-col text-center items-center transition-transform transform hover:scale-105"

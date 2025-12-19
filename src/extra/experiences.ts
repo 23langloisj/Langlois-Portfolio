@@ -5,7 +5,16 @@ import khoury from '../assets/khoury.jpeg';
 import sandbox from '../assets/sandbox.png'
 import smartleaf from '../assets/smartleaf.jpeg';
 
-const experiences = [
+export interface ExperienceData {
+    company: string;
+    role: string;
+    description: string;
+    live: string | null;
+    image: string;
+    date: string;
+}
+
+const experiences: ExperienceData[]= [
     {
         company: "Smartleaf",
         role: "Software Engineer Co-op",

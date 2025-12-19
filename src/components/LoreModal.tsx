@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 
-const Modal = ({ showModal, setShowModal, lore, name }) => {
+export interface ModalProps {
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+  lore: string;
+  name: string;
+}
+
+const Modal = ({ showModal, setShowModal, lore, name }: ModalProps) => {
   if (!showModal) return null; // Don't render the modal if showModal is false
 
   return (
@@ -17,12 +24,6 @@ const Modal = ({ showModal, setShowModal, lore, name }) => {
       </div>
     </div>
   );
-};
-Modal.propTypes = {
-  showModal: PropTypes.bool.isRequired,
-  setShowModal: PropTypes.func.isRequired,
-  lore: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
 };
 
 export default Modal;

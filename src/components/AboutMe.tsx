@@ -13,8 +13,8 @@ const AboutMe = () => {
     window.location.href = `mailto:${emailAddress}`;
   };
 
-const interestsRef = useRef(null);
-const typed = useRef(null);
+const interestsRef = useRef<HTMLSpanElement>(null);
+const typed = useRef<Typed | null>(null);
 
 useEffect(() => {
 
@@ -38,7 +38,7 @@ useEffect(() => {
   typed.current = new Typed(interestsRef.current, options);
 
   return () => {
-      typed.current.destroy();
+      typed.current?.destroy();
   };
 
 }, []);

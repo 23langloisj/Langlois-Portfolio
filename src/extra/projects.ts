@@ -2,6 +2,15 @@ import peaceofmind from '../assets/peaceofmind.png';
 import ghosts from '../assets/ghosts.png';
 import neurojump from '../assets/neurojump.png';
 
+export interface ProjectData {
+    image: string | null;
+    title: string;
+    description: string;
+    live: string | null;
+    code: string | null;
+    technologies: string[];
+}
+
 const projects = [
     {
         image: peaceofmind,

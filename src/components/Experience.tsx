@@ -1,14 +1,14 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import experiences from '../extra/experiences.js';
+import experiences, { ExperienceData } from '../extra/experiences.js';
 
 const Experience = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-64 mb-64">
       <h2 className="text-black text-5xl font-bold mb-10" id="experiences">My Experience</h2>
       <VerticalTimeline lineColor='black'>
-        {experiences.map((experience, index) => (
+        {experiences.map((experience: ExperienceData, index) => (
           <VerticalTimelineElement
             key={index}
             date={experience.date}
