@@ -5,25 +5,64 @@ import experiences, { ExperienceData } from '../extra/experiences.js';
 
 const Experience = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-64 mb-64">
-      <h2 className="text-black text-5xl font-bold mb-10" id="experiences">My Experience</h2>
-      <VerticalTimeline lineColor='black'>
+    <section id="experiences" className="py-20 px-6 max-w-6xl mx-auto">
+      {/* Section Header - Consistent with About Me */}
+      <div className="flex items-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-100 whitespace-nowrap">
+          <span className="font-mono text-teal-400 text-2xl mr-2">02.</span>
+          Where I’ve Worked
+        </h2>
+        <div className="h-[1px] bg-slate-700 w-full ml-6"></div>
+      </div>
+
+      {/* The Timeline */}
+      <VerticalTimeline lineColor='#334155'> {/* Slate-700 */}
         {experiences.map((experience: ExperienceData, index) => (
           <VerticalTimelineElement
             key={index}
             date={experience.date}
-            dateClassName="font-bold text-xl"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            contentStyle={{ background: '#d8eaf1', color: '#000' }}
-            contentArrowStyle={{ borderRight: '7px solid #d8eaf1' }}
-            icon={<img src={experience.image} alt={`${experience.company} logo`} className="w-full h-full object-contain rounded-full" />}
+            dateClassName="text-slate-400 font-mono text-sm px-4"
+            iconStyle={{ 
+              background: '#0f172a', // Matches your body bg
+              boxShadow: '0 0 0 4px #2dd4bf, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)' 
+            }}
+            contentStyle={{ 
+              background: '#1e293b', // Slate-800
+              color: '#e2e8f0', 
+              boxShadow: 'none',
+              border: '1px solid #334155',
+              borderRadius: '12px',
+              padding: '2rem'
+            }}
+            contentArrowStyle={{ borderRight: '7px solid #334155' }}
+            icon={
+              <div className="flex items-center justify-center w-full h-full p-2">
+                <img 
+                  src={experience.image} 
+                  alt={experience.company} 
+                  className="w-full h-full object-contain rounded-full" 
+                />
+              </div>
+            }
           >
-            <h3 className="text-3xl font-bold text-center">{experience.company}</h3>
-            <h4 className="text-xl font-semibold text-center">{experience.role}</h4>
+            <div className="text-left">
+              <h3 className="text-xl font-bold text-slate-100 mb-1">
+                {experience.role}
+              </h3>
+              <p className="text-teal-400 font-mono text-sm mb-4 !mt-0 uppercase tracking-wider">
+                {experience.company}
+              </p>
+              
+              {experience.description && (
+                <p className="text-slate-400 text-sm leading-relaxed !font-normal">
+                  {experience.description}
+                </p>
+              )}
+            </div>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
-    </div>
+    </section>
   );
 }
 

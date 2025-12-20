@@ -3,7 +3,7 @@ import ghosts from '../assets/ghosts.png';
 import neurojump from '../assets/neurojump.png';
 
 export interface ProjectData {
-    image: string | null;
+    image: string;
     title: string;
     description: string;
     live: string | null;
@@ -24,7 +24,7 @@ const projects = [
     {
         image: ghosts,
         title: "GHOSTS LITE",
-        description: "GHOSTS LITE is a streamlined version of the GHOSTS framework designed to simulate realistic network without the expense of running actual applications",
+        description: "GHOSTS LITE is a streamlined version of the GHOSTS framework designed to cheaply simulate realistic network activity",
         live: null,
         code: "https://github.com/23langloisj/GHOSTS/tree/master/src/Ghosts.Client.Lite",
         technologies: [".NET", "C#"],
