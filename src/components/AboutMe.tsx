@@ -72,7 +72,7 @@ const AboutMe = () => {
               Currently, I serve as a{" "}
               <span className="text-slate-100 font-semibold">Technical Lead & Head of DevOps</span> 
               {" "}at{" "}
-              <a href="https://www.northeasternsandbox.com/" className="text-blue-400 font-semibold hover:text-blue-300 transition-colors hover:underline decoration-blue-400/30">
+              <a href="https://www.sandboxnu.com/" className="text-blue-400 font-semibold hover:text-blue-300 transition-colors hover:underline decoration-blue-400/30">
                 Sandbox @ Northeastern
               </a>, 
               leading the development of student platforms and managing infrastructure. I am also working as a 

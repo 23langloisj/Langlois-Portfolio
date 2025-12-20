@@ -11,7 +11,6 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        {/* Navbar remains at the top */}
         <Navbar />
 
         <div className="flex-grow mt-16">
