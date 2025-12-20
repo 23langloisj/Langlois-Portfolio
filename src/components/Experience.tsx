@@ -6,7 +6,6 @@ import experiences, { ExperienceData } from '../extra/experiences.js';
 const Experience = () => {
   return (
     <section id="experiences" className="py-20 px-6 max-w-6xl mx-auto">
-      {/* Section Header - Consistent with About Me */}
       <div className="flex items-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-slate-100 whitespace-nowrap">
           <span className="font-mono text-teal-400 text-2xl mr-2">02.</span>
@@ -15,19 +14,18 @@ const Experience = () => {
         <div className="h-[1px] bg-slate-700 w-full ml-6"></div>
       </div>
 
-      {/* The Timeline */}
-      <VerticalTimeline lineColor='#334155'> {/* Slate-700 */}
+      <VerticalTimeline lineColor='#334155'>
         {experiences.map((experience: ExperienceData, index) => (
           <VerticalTimelineElement
             key={index}
             date={experience.date}
             dateClassName="text-slate-400 font-mono text-sm px-4"
             iconStyle={{ 
-              background: '#0f172a', // Matches your body bg
+              background: '#0f172a',
               boxShadow: '0 0 0 4px #2dd4bf, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)' 
             }}
             contentStyle={{ 
-              background: '#1e293b', // Slate-800
+              background: '#1e293b',
               color: '#e2e8f0', 
               boxShadow: 'none',
               border: '1px solid #334155',

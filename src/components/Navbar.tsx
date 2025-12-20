@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
-import { FiFileText } from 'react-icons/fi'; // Optional: if you want an icon for resume
+import { FiFileText } from 'react-icons/fi'; 
 
 const Navbar = () => {
   const navItems = [
     { label: "About", href: "about-me" },
-    { label: "Projects", href: "projects" },
     { label: "Experience", href: "experiences" },
+    { label: "Projects", href: "projects" },
     { label: "Food", href: "/sheflang" },
   ];
 
@@ -43,8 +43,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        
-        {/* Logo / Home Button */}
         <div
           className="cursor-pointer group"
           onClick={() => {
