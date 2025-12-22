@@ -5,7 +5,7 @@ const ClashStats = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/clash/%23200VUR9YR')
+    fetch('https://portfolio-backend-u4bb.onrender.com/api/clash/%23200VUR9YR')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
