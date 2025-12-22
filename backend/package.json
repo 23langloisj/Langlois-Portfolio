@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch server.ts",
-    "start": "node dist/server.js",
-    "build": "tsc"
+    "build": "npm install && tsc -p tsconfig.json",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
