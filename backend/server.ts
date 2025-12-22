@@ -24,15 +24,20 @@ app.get('/api/clash/:tag', async (req: Request, res: Response) => {
         
         const response = await axios.get(`https://api.clashofclans.com/v1/players/${encodedTag}`, {
             headers: {
-                Authorization: `Bearer ${CLASH_API_KEY}`,
-                Accept: 'application/json',
+                'Authorization': `Bearer ${CLASH_API_KEY}`,
+                'Accept': 'application/json',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
         });
         
         res.json(response.data);
     } catch (error: any) {
-        console.error("Clash API Error Status:", error.response?.status);
-        res.status(500).json({ error: 'Failed to fetch Clash data' });
+
+        console.error("FULL ERROR DATA:", error.response?.data);
+        res.status(500).json({ 
+            error: 'Failed to fetch Clash data', 
+            debug: error.response?.data?.message
+        });
     }
 });
 
