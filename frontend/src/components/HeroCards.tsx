@@ -115,11 +115,6 @@ const HeroCards = ({ heroes, clan }: { heroes: Hero[]; clan?: string }) => {
           <HeroCard key={h.name} hero={h} />
         ))}
       </div>
-
-      <p className="mt-3 font-mono text-[10px] leading-relaxed text-faint">
-        Hero art &copy; Supercell &mdash; fan content, not affiliated with or
-        endorsed by Supercell.
-      </p>
     </div>
   )
 }

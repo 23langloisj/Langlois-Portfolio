@@ -6,7 +6,6 @@ import { ThemeToggle } from '../lib/theme'
 const navItems = [
   { label: 'About', target: 'about' },
   { label: 'Experience', target: 'experience' },
-  { label: 'Work', target: 'work' },
   { label: 'Kitchen', target: '/sheflang' },
 ]
 
@@ -30,7 +29,7 @@ const Navbar = () => {
       setActive('')
       return
     }
-    const ids = ['about', 'experience', 'work']
+    const ids = ['about', 'experience']
     const els = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el))

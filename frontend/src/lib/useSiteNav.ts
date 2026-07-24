@@ -9,7 +9,6 @@ export interface SectionLink {
 export const SECTIONS: SectionLink[] = [
   { label: 'About', target: 'about' },
   { label: 'Experience', target: 'experience' },
-  { label: 'Work', target: 'work' },
   { label: 'Signals', target: 'signals' },
   { label: 'Contact', target: 'contact' },
 ]

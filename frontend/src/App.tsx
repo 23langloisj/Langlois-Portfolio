@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'
 import Intro from './components/Intro'
 import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
-import Projects from './components/Projects'
 import Signals from './components/Signals'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -18,7 +17,6 @@ function Home() {
       <Intro />
       <AboutMe />
       <Experience />
-      <Projects />
       <Signals />
       <Contact />
     </>

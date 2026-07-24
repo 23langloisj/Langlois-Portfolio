@@ -23,9 +23,20 @@ const Experience = () => {
         {experiences.map((exp: ExperienceData, i) => (
           <Reveal key={exp.company} delay={Math.min(i * 40, 200)}>
             <li className="group flex gap-4 border-b border-hairline py-5">
-              <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-md border border-hairline bg-surface font-mono text-[11px] font-semibold text-muted transition-colors duration-200 group-hover:border-line group-hover:text-ink">
-                {exp.mark}
-              </span>
+              {exp.logo ? (
+                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-md border border-hairline bg-white transition-colors duration-200 group-hover:border-line">
+                  <img
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    loading="lazy"
+                    className="h-full w-full object-contain p-1.5 grayscale transition duration-300 group-hover:grayscale-0"
+                  />
+                </span>
+              ) : (
+                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-md border border-hairline bg-surface font-mono text-[11px] font-semibold text-muted transition-colors duration-200 group-hover:border-line group-hover:text-ink">
+                  {exp.mark}
+                </span>
+              )}
 
               <div className="flex flex-1 flex-col">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">

@@ -13,7 +13,7 @@ const Contact = () => {
       <Reveal>
         <div className="overflow-hidden rounded-2xl bg-inverse px-7 py-10 text-inverse-fg md:px-11 md:py-14">
           <span className="font-mono text-eyebrow uppercase tracking-label text-inverse-fg/45">
-            05 · Contact
+            04 · Contact
           </span>
           <h2 className="mt-4 max-w-[18ch] text-[30px] font-semibold leading-[1.08] tracking-display md:text-[38px]">
             Let&rsquo;s build something.

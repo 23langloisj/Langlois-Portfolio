@@ -154,7 +154,7 @@ const Signals = () => {
   return (
     <Section
       id="signals"
-      index="04"
+      index="03"
       title="GitHub"
       action={
         <a

@@ -68,8 +68,8 @@ const AboutMe = () => {
               , Northeastern&rsquo;s student-led software consultancy.
             </p>
             <p>
-              I care about clean systems, fast feedback loops, and shipping
-              tools people actually use.
+              I care about clean systems and shipping tools people actually
+              use.
             </p>
 
             <div className="flex items-baseline gap-2.5 pt-2 font-mono text-[13px]">

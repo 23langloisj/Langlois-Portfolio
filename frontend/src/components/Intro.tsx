@@ -79,8 +79,7 @@ const Intro = () => {
               Klaviyo
             </a>
             , previously eMoney, Smartleaf, and the SEI at Carnegie Mellon. I
-            like clean systems, fast feedback loops, and tools people actually
-            use.
+            like clean systems and tools people actually use.
           </p>
 
           {/* Availability + actions */}
@@ -96,10 +95,10 @@ const Intro = () => {
             <div className="flex items-center gap-3">
               <button
                 ref={magneticRef}
-                onClick={() => scrollToId('work')}
+                onClick={() => scrollToId('experience')}
                 className="rounded-md bg-ink px-4 py-2.5 text-[14px] font-medium text-canvas transition-transform duration-200 ease-out"
               >
-                View work
+                Experience
               </button>
               <button
                 onClick={() => scrollToId('contact')}
