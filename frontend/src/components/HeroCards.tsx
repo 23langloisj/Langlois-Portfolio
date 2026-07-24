@@ -110,7 +110,7 @@ const HeroCards = ({ heroes, clan }: { heroes: Hero[]; clan?: string }) => {
         )}
       </div>
 
-      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+      <div className="grid grid-cols-2 gap-2.5">
         {list.map((h) => (
           <HeroCard key={h.name} hero={h} />
         ))}

@@ -112,18 +112,18 @@ const ClashStats = () => {
         <Panel>
           <Header state="live" />
 
-          {/* Stat grid */}
-          <div className="grid grid-cols-2 divide-x divide-hairline sm:grid-cols-4">
-            <div className="divide-y divide-hairline sm:divide-y-0">
+          {/* Stat grid (2×2) */}
+          <div className="grid grid-cols-2">
+            <div className="border-b border-r border-hairline">
               <Stat label="Town Hall" value={data.townHallLevel ?? 0} />
             </div>
-            <div>
+            <div className="border-b border-hairline">
               <Stat label="Trophies" value={trophies ?? 0} />
             </div>
-            <div className="border-t border-hairline sm:border-t-0">
+            <div className="border-r border-hairline">
               <Stat label="War Stars" value={data.warStars ?? 0} />
             </div>
-            <div className="border-t border-hairline sm:border-t-0">
+            <div>
               <Stat label="XP Level" value={data.expLevel ?? 0} />
             </div>
           </div>

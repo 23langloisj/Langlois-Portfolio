@@ -46,8 +46,9 @@ const Intro = () => {
         <div className="spotlight" />
       </div>
 
-      <div className="mx-auto max-w-content px-6 pb-2 pt-10 md:pt-14">
-        <Reveal>
+      <div className="mx-auto max-w-[1040px] px-6 pb-2 pt-10 md:pt-14">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start lg:gap-12">
+          <Reveal>
           <div className="mb-5 flex items-center gap-2 font-mono text-eyebrow uppercase tracking-label text-muted">
             <span>CS + Math</span>
             <span className="text-line">/</span>
@@ -154,9 +155,10 @@ const Intro = () => {
           </div>
         </Reveal>
 
-        {/* Signature: live Clash of Clans readout */}
-        <div className="mt-11 md:mt-14">
-          <ClashStats />
+          {/* Live Clash of Clans readout — beside the intro on large screens */}
+          <div className="mt-2 lg:mt-0 lg:pt-1">
+            <ClashStats />
+          </div>
         </div>
       </div>
     </header>
