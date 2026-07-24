@@ -22,7 +22,7 @@ app.get('/api/clash/:tag', async (req: Request, res: Response) => {
 
         const encodedTag = encodeURIComponent(tag);
         
-        const response = await axios.get(`https://api.clashofclans.com/v1/players/${encodedTag}`, {
+        const response = await axios.get(`https://cocproxy.royaleapi.dev/v1/players/${encodedTag}`, {
             headers: {
                 'Authorization': `Bearer ${CLASH_API_KEY}`,
                 'Accept': 'application/json',
@@ -34,8 +34,9 @@ app.get('/api/clash/:tag', async (req: Request, res: Response) => {
     } catch (error: any) {
 
         console.error("FULL ERROR DATA:", error.response?.data);
-        res.status(500).json({ 
-            error: 'Failed to fetch Clash data', 
+        const status = error.response?.status || 500;
+        res.status(status).json({
+            error: 'Failed to fetch Clash data',
             debug: error.response?.data?.message
         });
     }
