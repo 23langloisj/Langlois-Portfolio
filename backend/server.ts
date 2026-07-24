@@ -13,6 +13,14 @@ app.use(cors({
 const CLASH_API_KEY = process.env.CLASH_API_KEY?.trim();
 console.log(`CLASH_API_KEY loaded: ${Boolean(CLASH_API_KEY)}, length: ${CLASH_API_KEY?.length ?? 0}`);
 
+// TODO: temporary diagnostic — remove once the Clash endpoint is confirmed working
+app.get('/api/debug', (_req: Request, res: Response) => {
+    res.json({
+        keyLoaded: Boolean(CLASH_API_KEY),
+        keyLength: CLASH_API_KEY?.length ?? 0
+    });
+});
+
 app.get('/api/clash/:tag', async (req: Request, res: Response) => {
     try {
         let tag = req.params.tag;
