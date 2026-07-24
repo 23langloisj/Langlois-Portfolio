@@ -46,8 +46,10 @@ const Intro = () => {
         <div className="spotlight" />
       </div>
 
-      <div className="mx-auto max-w-[1040px] px-6 pb-2 pt-10 md:pt-14">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start lg:gap-12">
+      <div className="mx-auto w-full max-w-[1040px] px-6">
+        <div className="lg:flex lg:items-start lg:gap-12">
+          {/* Left — intro, vertically centered in the viewport on desktop */}
+          <div className="py-12 lg:flex lg:min-h-[calc(100vh-4rem)] lg:flex-1 lg:items-center lg:py-10">
           <Reveal>
           <div className="mb-5 flex items-center gap-2 font-mono text-eyebrow uppercase tracking-label text-muted">
             <span>CS + Math</span>
@@ -154,9 +156,10 @@ const Intro = () => {
             </button>
           </div>
         </Reveal>
+          </div>
 
-          {/* Live Clash of Clans readout — beside the intro on large screens */}
-          <div className="mt-2 lg:mt-0 lg:pt-1">
+          {/* Right — live Clash of Clans, tall on desktop */}
+          <div className="pb-14 lg:w-[400px] lg:py-10">
             <ClashStats />
           </div>
         </div>
