@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="24" fill="#1D1E20"/>
+  <text x="50" y="50" dy="0.35em" text-anchor="middle"
+        font-family="'JetBrains Mono', ui-monospace, Menlo, monospace"
+        font-size="52" font-weight="700" fill="#F9FAFB" letter-spacing="-2">jl</text>
+  <circle cx="78" cy="26" r="8" fill="#2CB56B"/>
+</svg>

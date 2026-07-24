@@ -1,67 +1,59 @@
-import React from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import experiences, { ExperienceData } from '../extra/experiences.js';
+import { FiArrowUpRight } from 'react-icons/fi'
+import experiences, { ExperienceData } from '../extra/experiences'
+import { Section, Reveal } from './primitives'
 
 const Experience = () => {
   return (
-    <section id="experiences" className="py-20 px-6 max-w-6xl mx-auto">
-      <div className="flex items-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-100 whitespace-nowrap">
-          <span className="font-mono text-teal-400 text-2xl mr-2">02.</span>
-          Where I’ve Worked
-        </h2>
-        <div className="h-[1px] bg-slate-700 w-full ml-6"></div>
-      </div>
+    <Section
+      id="experience"
+      index="02"
+      title="Experience"
+      action={
+        <a
+          href="https://www.linkedin.com/in/jacob-langlois/"
+          target="_blank"
+          rel="noreferrer"
+          className="link-sweep inline-flex items-center gap-1 font-mono text-[12px] text-link transition-colors hover:text-link-hover"
+        >
+          Full history <FiArrowUpRight size={13} />
+        </a>
+      }
+    >
+      <ol className="border-t border-hairline">
+        {experiences.map((exp: ExperienceData, i) => (
+          <Reveal key={exp.company} delay={Math.min(i * 40, 200)}>
+            <li className="group flex gap-4 border-b border-hairline py-5">
+              <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-md border border-hairline bg-surface font-mono text-[11px] font-semibold text-muted transition-colors duration-200 group-hover:border-line group-hover:text-ink">
+                {exp.mark}
+              </span>
 
-      <VerticalTimeline lineColor='#334155'>
-        {experiences.map((experience: ExperienceData, index) => (
-          <VerticalTimelineElement
-            key={index}
-            date={experience.date}
-            dateClassName="text-slate-400 font-mono text-sm px-4"
-            iconStyle={{ 
-              background: '#0f172a',
-              boxShadow: '0 0 0 4px #2dd4bf, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)' 
-            }}
-            contentStyle={{ 
-              background: '#1e293b',
-              color: '#e2e8f0', 
-              boxShadow: 'none',
-              border: '1px solid #334155',
-              borderRadius: '12px',
-              padding: '2rem'
-            }}
-            contentArrowStyle={{ borderRight: '7px solid #334155' }}
-            icon={
-              <div className="flex items-center justify-center w-full h-full p-2">
-                <img 
-                  src={experience.image} 
-                  alt={experience.company} 
-                  className="w-full h-full object-contain rounded-full" 
-                />
-              </div>
-            }
-          >
-            <div className="text-left">
-              <h3 className="text-xl font-bold text-slate-100 mb-1">
-                {experience.role}
-              </h3>
-              <p className="text-teal-400 font-mono text-sm mb-4 !mt-0 uppercase tracking-wider">
-                {experience.company}
-              </p>
-              
-              {experience.description && (
-                <p className="text-slate-400 text-sm leading-relaxed !font-normal">
-                  {experience.description}
+              <div className="flex flex-1 flex-col">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
+                  <h3 className="text-[15px] font-semibold text-ink">
+                    {exp.role}
+                  </h3>
+                  <span className="tnum font-mono text-[12px] text-muted">
+                    {exp.date}
+                  </span>
+                </div>
+
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                  <span className="text-[13px] text-body">{exp.company}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-label text-faint">
+                    {exp.domain}
+                  </span>
+                </div>
+
+                <p className="mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-body">
+                  {exp.summary}
                 </p>
-              )}
-            </div>
-          </VerticalTimelineElement>
+              </div>
+            </li>
+          </Reveal>
         ))}
-      </VerticalTimeline>
-    </section>
-  );
+      </ol>
+    </Section>
+  )
 }
 
-export default Experience;
+export default Experience

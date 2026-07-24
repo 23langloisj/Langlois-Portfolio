@@ -1,35 +1,74 @@
-import React from 'react';
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
+import { FaInstagram } from 'react-icons/fa'
+import { AiOutlineMail } from 'react-icons/ai'
+import { FiArrowUp } from 'react-icons/fi'
 
 const Footer = () => {
-    return (
-        <footer className="py-12 px-6 border-t border-slate-800/60 bg-[#0f172a]">
-            <div className="max-w-6xl mx-auto flex flex-col items-center">
-                <div className="flex gap-8 mb-8 text-slate-400">
-                    <a 
-                        href="https://github.com/23langloisj" 
-                        target="_blank" 
-                        className="hover:text-teal-400 transition-colors duration-300"
-                    >
-                        <AiFillGithub size={24} />
-                    </a>
-                    <a 
-                        href="https://www.linkedin.com/in/jacob-langlois/" 
-                        target="_blank" 
-                        className="hover:text-teal-400 transition-colors duration-300"
-                    >
-                        <AiFillLinkedin size={24} />
-                    </a>
-                </div>
-                <p className="font-mono text-sm tracking-widest text-slate-500 uppercase mb-2">
-                    Designed & Built by <span className="text-slate-300">Jake Langlois</span>
-                </p>
-                <p className="text-[10px] font-mono text-slate-600 uppercase tracking-tighter">
-                    React · Tailwind · TypeScript · Framer Motion
-                </p>
-            </div>
-        </footer>
-    );
-};
+  return (
+    <footer className="mx-auto w-full max-w-content px-6 pb-14 pt-[72px] md:pt-[88px]">
+      <div className="border-t border-hairline pt-7">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-6 w-6 place-items-center rounded bg-ink font-mono text-[11px] font-bold leading-none text-canvas">
+              jl
+            </span>
+            <span className="font-mono text-[12px] text-muted">
+              jakelanglois.com
+            </span>
+          </div>
 
-export default Footer;
+          <div className="flex items-center gap-5 text-muted">
+            <a
+              href="mailto:langlois.j@northeastern.edu"
+              aria-label="Email"
+              className="transition-colors hover:text-ink"
+            >
+              <AiOutlineMail size={19} />
+            </a>
+            <a
+              href="https://github.com/23langloisj"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="transition-colors hover:text-ink"
+            >
+              <AiFillGithub size={19} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jacob-langlois/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="transition-colors hover:text-ink"
+            >
+              <AiFillLinkedin size={19} />
+            </a>
+            <a
+              href="https://www.instagram.com/jake.langlois1/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="transition-colors hover:text-ink"
+            >
+              <FaInstagram size={17} />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-mono text-[11px] text-faint">
+            Designed and built by Jake Langlois · React · TypeScript · Tailwind
+          </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="inline-flex items-center gap-1.5 self-start font-mono text-[11px] uppercase tracking-label text-muted transition-colors hover:text-ink sm:self-auto"
+          >
+            Back to top <FiArrowUp size={12} />
+          </button>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer

@@ -1,39 +1,49 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Experience from './components/Experience';
-import AboutMe from './components/AboutMe';
-import Intro from './components/Intro';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
-import Sheflang from './components/Sheflang';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './lib/theme'
+import Navbar from './components/Navbar'
+import Intro from './components/Intro'
+import AboutMe from './components/AboutMe'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Signals from './components/Signals'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import Sheflang from './components/Sheflang'
+import ScrollProgress from './components/ScrollProgress'
+import CommandPalette from './components/CommandPalette'
+
+function Home() {
+  return (
+    <>
+      <Intro />
+      <AboutMe />
+      <Experience />
+      <Projects />
+      <Signals />
+      <Contact />
+    </>
+  )
+}
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-
-        <div className="flex-grow mt-16">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Intro />
-                  <AboutMe />
-                  <Experience />
-                  <Projects />
-                </>
-              }
-            />
-            <Route path="/sheflang" element={<Sheflang />} />
-          </Routes>
+    <ThemeProvider>
+      <Router>
+        <ScrollProgress />
+        <CommandPalette />
+        <div className="flex min-h-screen flex-col bg-canvas">
+          <Navbar />
+          <main className="flex-grow pt-16">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/sheflang" element={<Sheflang />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
-    </Router>
-  );
+      </Router>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
