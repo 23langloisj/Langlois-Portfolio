@@ -108,7 +108,7 @@ const ClashStats = () => {
 
   return (
     <Reveal>
-      <div className="space-y-4">
+      <div className="space-y-3">
         <Panel>
           <Header state="live" />
 

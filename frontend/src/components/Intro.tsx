@@ -46,8 +46,8 @@ const Intro = () => {
         <div className="spotlight" />
       </div>
 
-      <div className="mx-auto w-full max-w-[1040px] px-6">
-        <div className="lg:flex lg:items-start lg:gap-12">
+      <div className="mx-auto w-full max-w-[1100px] px-6">
+        <div className="lg:flex lg:items-center lg:gap-12">
           {/* Left — intro, vertically centered in the viewport on desktop */}
           <div className="py-12 lg:flex lg:min-h-[calc(100vh-4rem)] lg:flex-1 lg:items-center lg:py-10">
           <Reveal>
@@ -158,8 +158,8 @@ const Intro = () => {
         </Reveal>
           </div>
 
-          {/* Right — live Clash of Clans, tall on desktop */}
-          <div className="pb-14 lg:w-[400px] lg:py-10">
+          {/* Right — live Clash of Clans, sized to fit one screen */}
+          <div className="pb-14 lg:w-[460px] lg:py-6">
             <ClashStats />
           </div>
         </div>
