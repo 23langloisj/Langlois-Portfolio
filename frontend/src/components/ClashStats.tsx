@@ -1,18 +1,10 @@
 import { useEffect, useState, ReactNode } from 'react'
 import { Reveal } from './primitives'
 import { useCountUp } from '../lib/useCountUp'
+import HeroCards from './HeroCards'
 
 const ENDPOINT =
   'https://portfolio-backend-u4bb.onrender.com/api/clash/%23200VUR9YR'
-
-const FEATURED_HEROES = [
-  'Barbarian King',
-  'Archer Queen',
-  'Grand Warden',
-  'Royal Champion',
-]
-
-type Hero = { name: string; level: number }
 
 const Panel = ({ children }: { children: ReactNode }) => (
   <div className="overflow-hidden rounded-lg border border-hairline bg-surface shadow-panel">
@@ -112,83 +104,47 @@ const ClashStats = () => {
   }
 
   const trophies = data.trophies > 0 ? data.trophies : data.bestTrophies
-  const heroes: Hero[] = (data.heroes ?? []).filter((h: Hero) =>
-    FEATURED_HEROES.includes(h.name),
-  )
-  const maxHeroLevel = Math.max(1, ...heroes.map((h) => h.level))
   const latest = data.achievements?.[data.achievements.length - 1]
 
   return (
     <Reveal>
-      <Panel>
-        <Header state="live" />
+      <div className="space-y-4">
+        <Panel>
+          <Header state="live" />
 
-        {/* Stat grid */}
-        <div className="grid grid-cols-2 divide-x divide-hairline sm:grid-cols-4">
-          <div className="divide-y divide-hairline sm:divide-y-0">
-            <Stat label="Town Hall" value={data.townHallLevel ?? 0} />
+          {/* Stat grid */}
+          <div className="grid grid-cols-2 divide-x divide-hairline sm:grid-cols-4">
+            <div className="divide-y divide-hairline sm:divide-y-0">
+              <Stat label="Town Hall" value={data.townHallLevel ?? 0} />
+            </div>
+            <div>
+              <Stat label="Trophies" value={trophies ?? 0} />
+            </div>
+            <div className="border-t border-hairline sm:border-t-0">
+              <Stat label="War Stars" value={data.warStars ?? 0} />
+            </div>
+            <div className="border-t border-hairline sm:border-t-0">
+              <Stat label="XP Level" value={data.expLevel ?? 0} />
+            </div>
           </div>
-          <div>
-            <Stat label="Trophies" value={trophies ?? 0} />
-          </div>
-          <div className="border-t border-hairline sm:border-t-0">
-            <Stat label="War Stars" value={data.warStars ?? 0} />
-          </div>
-          <div className="border-t border-hairline sm:border-t-0">
-            <Stat label="XP Level" value={data.expLevel ?? 0} />
-          </div>
-        </div>
 
-        {/* Heroes */}
-        {heroes.length > 0 && (
-          <div className="border-t border-hairline px-4 py-4">
-            <div className="mb-3 flex items-center gap-3">
-              <span className="font-mono text-[10px] uppercase tracking-label text-muted">
-                Heroes
+          {/* Latest milestone */}
+          {latest && (
+            <div className="flex items-start gap-2 border-t border-hairline px-4 py-3">
+              <span className="mt-[3px] font-mono text-[10px] uppercase tracking-label text-muted">
+                Latest
               </span>
-              <span className="h-px flex-grow bg-hairline" />
-              {data.clan?.name && (
-                <span className="font-mono text-[10px] text-faint">
-                  {data.clan.name}
-                </span>
-              )}
+              <p className="text-[12px] leading-snug text-body">
+                <span className="font-medium text-ink">{latest.name}</span>
+                {latest.info ? ` — ${latest.info}` : ''}
+              </p>
             </div>
-            <div className="grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2">
-              {heroes.map((hero) => (
-                <div key={hero.name} className="flex items-center gap-3">
-                  <span className="w-[112px] shrink-0 truncate text-[12px] text-body">
-                    {hero.name}
-                  </span>
-                  <span className="h-1 flex-grow overflow-hidden rounded-full bg-surface-2">
-                    <span
-                      className="block h-full rounded-full bg-ink/80"
-                      style={{
-                        width: `${(hero.level / maxHeroLevel) * 100}%`,
-                      }}
-                    />
-                  </span>
-                  <span className="tnum w-6 shrink-0 text-right font-mono text-[12px] font-semibold text-ink">
-                    {hero.level}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+          )}
+        </Panel>
 
-        {/* Latest milestone */}
-        {latest && (
-          <div className="flex items-start gap-2 border-t border-hairline px-4 py-3">
-            <span className="mt-[3px] font-mono text-[10px] uppercase tracking-label text-muted">
-              Latest
-            </span>
-            <p className="text-[12px] leading-snug text-body">
-              <span className="font-medium text-ink">{latest.name}</span>
-              {latest.info ? ` — ${latest.info}` : ''}
-            </p>
-          </div>
-        )}
-      </Panel>
+        {/* Interactive hero collection (live levels from the same feed) */}
+        <HeroCards heroes={data.heroes ?? []} clan={data.clan?.name} />
+      </div>
     </Reveal>
   )
 }

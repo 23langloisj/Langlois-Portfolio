@@ -10,7 +10,7 @@ export default defineConfig({
     dedupe: ['react', 'react-dom'],
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'cmdk'],
+    include: ['react', 'react-dom', 'cmdk', 'skinview3d', 'three'],
   },
   css: {
     postcss: {

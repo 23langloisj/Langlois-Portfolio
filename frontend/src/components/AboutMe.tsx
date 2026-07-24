@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
-import headshot from '../assets/headshot.jpg'
 import { Section, Reveal } from './primitives'
+import MinecraftAvatar from './MinecraftAvatar'
 
 const linkClass =
   'font-medium text-link underline decoration-link/25 underline-offset-[3px] transition-colors hover:text-link-hover hover:decoration-link/60'
@@ -85,16 +85,7 @@ const AboutMe = () => {
         </Reveal>
 
         <Reveal delay={80} className="shrink-0">
-          <figure className="w-[150px] sm:w-[168px]">
-            <img
-              src={headshot}
-              alt="Jake Langlois"
-              className="w-full rounded-lg border border-hairline object-cover grayscale transition-[filter,transform] duration-500 ease-out hover:grayscale-0"
-            />
-            <figcaption className="mt-2.5 text-center font-mono text-[11px] text-muted">
-              Boston, MA
-            </figcaption>
-          </figure>
+          <MinecraftAvatar className="mx-auto sm:mx-0" />
         </Reveal>
       </div>
     </Section>
