@@ -10,7 +10,8 @@ app.use(cors({
   origin: ['http://localhost:5173','https://jakelanglois.com']
 }));
 
-const CLASH_API_KEY = process.env.CLASH_API_KEY;
+const CLASH_API_KEY = process.env.CLASH_API_KEY?.trim();
+console.log(`CLASH_API_KEY loaded: ${Boolean(CLASH_API_KEY)}, length: ${CLASH_API_KEY?.length ?? 0}`);
 
 app.get('/api/clash/:tag', async (req: Request, res: Response) => {
     try {
