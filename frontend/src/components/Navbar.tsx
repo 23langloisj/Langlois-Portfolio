@@ -1,94 +1,189 @@
-import { useNavigate } from "react-router-dom";
-import { animateScroll as scroll } from "react-scroll";
-import { FiFileText } from 'react-icons/fi'; 
+import { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { FiMenu, FiX, FiSearch } from 'react-icons/fi'
+import { ThemeToggle } from '../lib/theme'
+
+const navItems = [
+  { label: 'About', target: 'about' },
+  { label: 'Experience', target: 'experience' },
+  { label: 'Work', target: 'work' },
+  { label: 'Kitchen', target: '/sheflang' },
+]
 
 const Navbar = () => {
-  const navItems = [
-    { label: "About", href: "about-me" },
-    { label: "Experience", href: "experiences" },
-    { label: "Projects", href: "projects" },
-    { label: "Food", href: "/sheflang" },
-  ];
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('')
 
-  const resumeLink = "Langlois_Resume.pdf";
-  const navigate = useNavigate();
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
-  const handleNavClick = (href: string) => {
-    if (href === "/sheflang") {
-      navigate(href);
-      setTimeout(() => {
-        const section = document.getElementById("sheflang");
-        section?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    } else if (href.startsWith("/")) {
-      navigate(href);
-    } else {
-      if (window.location.pathname !== "/") {
-        navigate("/");
-        setTimeout(() => {
-          const element = document.getElementById(href);
-          if (element) {
-            scroll.scrollTo(element.offsetTop - 100, { duration: 800 });
-          }
-        }, 150);
-      } else {
-        const element = document.getElementById(href);
-        if (element) {
-          scroll.scrollTo(element.offsetTop - 100, { duration: 800 });
-        }
-      }
+  // Scroll-spy: highlight the section currently crossing the viewport middle.
+  useEffect(() => {
+    if (pathname !== '/') {
+      setActive('')
+      return
     }
-  };
+    const ids = ['about', 'experience', 'work']
+    const els = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el))
+    if (!els.length) return
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id)
+        })
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
+    )
+    els.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [pathname])
+
+  const isActive = (target: string) =>
+    target === '/sheflang' ? pathname === '/sheflang' : active === target
+
+  const scrollToId = (id: string) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+
+  const handleNav = (target: string) => {
+    setOpen(false)
+    if (target.startsWith('/')) {
+      navigate(target)
+      window.scrollTo(0, 0)
+      return
+    }
+    if (pathname !== '/') {
+      navigate('/')
+      setTimeout(() => scrollToId(target), 90)
+    } else {
+      scrollToId(target)
+    }
+  }
+
+  const goHome = () => {
+    setOpen(false)
+    if (pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' })
+    else {
+      navigate('/')
+      window.scrollTo(0, 0)
+    }
+  }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-slate-800">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div
-          className="cursor-pointer group"
-          onClick={() => {
-            if (window.location.pathname === "/") {
-              scroll.scrollToTop({ duration: 800 });
-            } else {
-              navigate("/");
-              // Reset to top instantly on route change
-              window.scrollTo(0, 0);
-            }
-          }}
+    <nav
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled || open
+          ? 'border-hairline bg-canvas/85 backdrop-blur-md'
+          : 'border-transparent'
+      }`}
+    >
+      <div className="mx-auto flex h-16 max-w-content items-center justify-between px-6">
+        {/* Monogram + wordmark */}
+        <button
+          onClick={goHome}
+          className="group flex items-center gap-2.5"
+          aria-label="Back to top"
         >
-          <div className="text-2xl font-bold tracking-tighter text-slate-100 transition-all group-hover:text-teal-400">
-            <span className="text-teal-400 font-mono text-xl">&lt;</span>
-            lang 
-            <span className="text-teal-400 font-mono text-xl"> /&gt;</span>
-          </div>
-        </div>
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-ink font-mono text-[13px] font-bold leading-none text-canvas transition-transform duration-300 ease-out group-hover:-translate-y-0.5">
+            jl
+          </span>
+          <span className="hidden font-mono text-[13px] text-body transition-colors group-hover:text-ink sm:inline">
+            jakelanglois.com
+          </span>
+        </button>
 
-        <div className="flex items-center gap-8">
-          <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <li key={index}>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ul className="hidden items-center md:flex">
+            {navItems.map((item) => (
+              <li key={item.label}>
                 <button
-                  onClick={() => handleNavClick(item.href)}
-                  className="flex items-center gap-2 group"
+                  onClick={() => handleNav(item.target)}
+                  className={`relative rounded-md px-3 py-2 font-mono text-[12px] uppercase tracking-label transition-colors ${
+                    isActive(item.target)
+                      ? 'text-ink'
+                      : 'text-muted hover:text-ink'
+                  }`}
                 >
-                  <span className="font-mono text-teal-400 text-xs"></span>
-                  <span className="text-slate-300 text-sm font-medium tracking-wide uppercase group-hover:text-teal-400 transition-colors">
-                    {item.label}
-                  </span>
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-link transition-all duration-300 ease-out ${
+                      isActive(item.target) ? 'w-4 opacity-100' : 'w-0 opacity-0'
+                    }`}
+                  />
                 </button>
               </li>
             ))}
           </ul>
-          <a 
-            href={resumeLink} 
-            download 
-            className="px-5 py-2 border border-teal-400 text-teal-400 font-mono text-xs uppercase tracking-widest rounded hover:bg-teal-400/10 transition-all duration-300 flex items-center gap-2"
+
+          <button
+            onClick={() => window.dispatchEvent(new Event('cmdk:open'))}
+            aria-label="Open command menu"
+            className="ml-1 flex items-center gap-2 rounded-md border border-hairline px-2.5 py-1.5 text-muted transition-colors hover:border-line hover:text-ink"
           >
-            Resume
+            <FiSearch size={14} />
+            <span className="hidden font-mono text-[11px] sm:inline">⌘K</span>
+          </button>
+
+          <ThemeToggle />
+
+          <a
+            href="Langlois_Resume.pdf"
+            download
+            className="ml-1 hidden rounded-md border border-line px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-label text-ink transition-colors duration-200 hover:bg-surface-2 sm:block"
+          >
+            Résumé
           </a>
+
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="ml-1 grid h-9 w-9 place-items-center rounded-md text-body transition-colors hover:bg-surface-2 md:hidden"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+          >
+            {open ? <FiX size={18} /> : <FiMenu size={18} />}
+          </button>
         </div>
       </div>
-    </nav>
-  );
-};
 
-export default Navbar;
+      {/* Mobile dropdown */}
+      <div
+        className={`overflow-hidden border-t border-hairline bg-canvas/95 backdrop-blur-md transition-[max-height,opacity] duration-300 ease-out md:hidden ${
+          open ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <ul className="mx-auto max-w-content px-6 py-2">
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <button
+                onClick={() => handleNav(item.target)}
+                className="w-full border-b border-hairline py-3 text-left font-mono text-[13px] uppercase tracking-label text-body transition-colors hover:text-ink"
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+          <li>
+            <a
+              href="Langlois_Resume.pdf"
+              download
+              onClick={() => setOpen(false)}
+              className="block py-3 text-left font-mono text-[13px] uppercase tracking-label text-body transition-colors hover:text-ink"
+            >
+              Résumé
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  )
+}
+
+export default Navbar
