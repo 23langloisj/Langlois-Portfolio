@@ -37,7 +37,7 @@ const AboutMe = () => {
           <div className="space-y-5 text-[16px] leading-[1.65] text-body">
             <p>
               I&rsquo;m a third-year Honors student at Northeastern studying
-              computer science and mathematics (3.97 GPA). Right now I&rsquo;m a
+              computer science and mathematics. Right now I&rsquo;m a
               software engineer co-op at{' '}
               <span className="font-medium text-ink">Klaviyo</span>, working on
               KSocial.
