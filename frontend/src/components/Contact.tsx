@@ -16,7 +16,7 @@ const Contact = () => {
             04 · Contact
           </span>
           <h2 className="mt-4 max-w-[18ch] text-[30px] font-semibold leading-[1.08] tracking-display md:text-[38px]">
-            Let&rsquo;s build something.
+            HMU!
           </h2>
           <p className="mt-5 max-w-[48ch] text-[16px] leading-relaxed text-inverse-fg/65">
             Graduating 2027. I&rsquo;m open to software engineering internships

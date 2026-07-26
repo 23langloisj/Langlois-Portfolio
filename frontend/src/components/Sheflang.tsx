@@ -8,7 +8,10 @@ const Sheflang = () => {
   const [active, setActive] = useState<FoodItem | null>(null)
 
   return (
-    <div id="sheflang" className="mx-auto max-w-content px-6 pb-4 pt-10 md:pt-14">
+    <div
+      id="sheflang"
+      className="mx-auto max-w-content px-6 pb-4 pt-10 md:pt-14"
+    >
       <Reveal>
         <div className="mb-4 font-mono text-eyebrow uppercase tracking-label text-muted">
           The kitchen
@@ -17,8 +20,7 @@ const Sheflang = () => {
           Sheflang
         </h1>
         <p className="mt-4 max-w-[52ch] text-[16px] leading-relaxed text-body">
-          A running log of things I&rsquo;ve cooked in college &mdash; and the
-          (mostly ridiculous) lore behind each one. Tap a dish for the story.
+          A running log of things I&rsquo;ve tried cooking in college
         </p>
         <div className="mt-4 font-mono text-[11px] uppercase tracking-label text-faint">
           {food.length} dishes · updated occasionally

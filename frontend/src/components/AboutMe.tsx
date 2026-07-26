@@ -12,15 +12,15 @@ const AboutMe = () => {
   useEffect(() => {
     const typed = new Typed(interestsRef.current, {
       strings: [
-        'bouldering',
-        'ping pong',
-        'hiking national parks',
-        'cooking',
-        'swimming',
+        'Ping Pong',
+        'Hiking & National Parks',
+        'Cooking',
+        'Christianity',
+        'Swimming',
         'Minecraft',
-        'Fortnite',
         'Clash of Clans',
-        'philosophy',
+        'Soccer',
+        'Beer',
       ],
       typeSpeed: 55,
       backSpeed: 28,
@@ -36,11 +36,10 @@ const AboutMe = () => {
         <Reveal className="flex-1">
           <div className="space-y-5 text-[16px] leading-[1.65] text-body">
             <p>
-              I&rsquo;m a third-year Honors student at Northeastern studying
-              computer science and mathematics. Right now I&rsquo;m a
-              software engineer co-op at{' '}
-              <span className="font-medium text-ink">Klaviyo</span>, working on
-              KSocial.
+              I&rsquo;m a Senior Honors student at Northeastern studying
+              computer science and math. Right now I&rsquo;m a software engineer
+              co-op at <span className="font-medium text-ink">Klaviyo</span>,
+              working on KSocial.
             </p>
             <p>
               Before this I built advisor tooling at{' '}
@@ -55,8 +54,7 @@ const AboutMe = () => {
               >
                 SEI at Carnegie Mellon
               </a>
-              , and did robotics work at Oak Ridge National Laboratory. On
-              campus I&rsquo;m technical lead and head of DevOps at{' '}
+              . On campus I&rsquo;m technical lead and head of DevOps at{' '}
               <a
                 href="https://www.sandboxnu.com/"
                 target="_blank"
@@ -68,8 +66,8 @@ const AboutMe = () => {
               , Northeastern&rsquo;s student-led software consultancy.
             </p>
             <p>
-              I care about clean systems and shipping tools people actually
-              use.
+              I'm originally from Pittsburgh, PA (McMurray ❤️‍🔥) and I think
+              Karate Kid II is the best in the trilogy.
             </p>
 
             <div className="flex items-baseline gap-2.5 pt-2 font-mono text-[13px]">

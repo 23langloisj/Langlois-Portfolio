@@ -10,6 +10,7 @@ import {
   FiSun,
   FiMoon,
   FiCoffee,
+  FiMapPin,
 } from 'react-icons/fi'
 import { useSiteNav, SECTIONS, EXTERNAL } from '../lib/useSiteNav'
 import { useTheme } from '../lib/theme'
@@ -94,6 +95,11 @@ const CommandPalette = () => {
             icon={<FiCoffee size={15} />}
             label="The kitchen"
             onSelect={() => run(() => go('/sheflang'))}
+          />
+          <Item
+            icon={<FiMapPin size={15} />}
+            label="Travel"
+            onSelect={() => run(() => go('/travel'))}
           />
         </Command.Group>
 

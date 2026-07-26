@@ -8,6 +8,7 @@ import Signals from './components/Signals'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Sheflang from './components/Sheflang'
+import Travel from './components/Travel'
 import ScrollProgress from './components/ScrollProgress'
 import CommandPalette from './components/CommandPalette'
 
@@ -35,6 +36,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sheflang" element={<Sheflang />} />
+              <Route path="/travel" element={<Travel />} />
             </Routes>
           </main>
           <Footer />

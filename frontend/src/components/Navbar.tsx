@@ -7,6 +7,7 @@ const navItems = [
   { label: 'About', target: 'about' },
   { label: 'Experience', target: 'experience' },
   { label: 'Kitchen', target: '/sheflang' },
+  { label: 'Travel', target: '/travel' },
 ]
 
 const Navbar = () => {
@@ -47,7 +48,7 @@ const Navbar = () => {
   }, [pathname])
 
   const isActive = (target: string) =>
-    target === '/sheflang' ? pathname === '/sheflang' : active === target
+    target.startsWith('/') ? pathname === target : active === target
 
   const scrollToId = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })

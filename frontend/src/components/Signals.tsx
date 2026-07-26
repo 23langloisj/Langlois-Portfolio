@@ -90,7 +90,9 @@ const Signals = () => {
       try {
         const [profileRes, reposRes] = await Promise.all([
           fetch(`https://api.github.com/users/${USER}`),
-          fetch(`https://api.github.com/users/${USER}/repos?per_page=100&sort=pushed`),
+          fetch(
+            `https://api.github.com/users/${USER}/repos?per_page=100&sort=pushed`
+          ),
         ])
         if (!profileRes.ok || !reposRes.ok) throw new Error('gh')
         const profile = await profileRes.json()
@@ -110,7 +112,7 @@ const Signals = () => {
         let contribTotal = 0
         try {
           const cRes = await fetch(
-            `https://github-contributions-api.jogruber.de/v4/${USER}?y=last`,
+            `https://github-contributions-api.jogruber.de/v4/${USER}?y=last`
           )
           if (cRes.ok) {
             const c = await cRes.json()
@@ -169,8 +171,7 @@ const Signals = () => {
     >
       <Reveal>
         <p className="mb-6 max-w-[52ch] text-[15px] leading-relaxed text-body">
-          A second live feed to go with the Clash panel &mdash; this one&rsquo;s
-          the code. Pulled straight from the GitHub API on load.
+          A collection of my favorite green (and white 💔) squares
         </p>
       </Reveal>
 
