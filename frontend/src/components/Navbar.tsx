@@ -6,6 +6,7 @@ import { ThemeToggle } from '../lib/theme'
 const navItems = [
   { label: 'About', target: 'about' },
   { label: 'Experience', target: 'experience' },
+  { label: 'Thoughts', target: '/thoughts' },
   { label: 'Kitchen', target: '/sheflang' },
   { label: 'Travel', target: '/travel' },
 ]
@@ -47,8 +48,11 @@ const Navbar = () => {
     return () => io.disconnect()
   }, [pathname])
 
+  // Routes stay lit on their sub-pages (/thoughts/<slug>); ids follow scroll-spy.
   const isActive = (target: string) =>
-    target.startsWith('/') ? pathname === target : active === target
+    target.startsWith('/')
+      ? pathname === target || pathname.startsWith(`${target}/`)
+      : active === target
 
   const scrollToId = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -135,7 +139,7 @@ const Navbar = () => {
           <ThemeToggle />
 
           <a
-            href="Langlois_Resume.pdf"
+            href="/Langlois_Resume.pdf"
             download
             className="ml-1 hidden rounded-md border border-line px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-label text-ink transition-colors duration-200 hover:bg-surface-2 sm:block"
           >
@@ -172,7 +176,7 @@ const Navbar = () => {
           ))}
           <li>
             <a
-              href="Langlois_Resume.pdf"
+              href="/Langlois_Resume.pdf"
               download
               onClick={() => setOpen(false)}
               className="block py-3 text-left font-mono text-[13px] uppercase tracking-label text-body transition-colors hover:text-ink"

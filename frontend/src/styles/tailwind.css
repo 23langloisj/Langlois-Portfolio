@@ -147,6 +147,141 @@
   background-size: 100% 1.5px;
 }
 
+/* ── Rendered markdown (thoughts entries) ── */
+.prose-note {
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: rgb(var(--body));
+}
+.prose-note > * + * {
+  margin-top: 1.15em;
+}
+.prose-note h2,
+.prose-note h3,
+.prose-note h4 {
+  scroll-margin-top: 6rem;
+  color: rgb(var(--ink));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.prose-note h2 {
+  margin-top: 2.1em;
+  font-size: 21px;
+}
+.prose-note h3 {
+  margin-top: 1.8em;
+  font-size: 17px;
+}
+.prose-note h4 {
+  margin-top: 1.6em;
+  font-size: 15px;
+}
+.prose-note strong {
+  color: rgb(var(--ink));
+  font-weight: 600;
+}
+.prose-note a {
+  color: rgb(var(--link));
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.prose-note a:hover {
+  color: rgb(var(--link-hover));
+}
+.prose-note ul,
+.prose-note ol {
+  padding-left: 1.35em;
+}
+.prose-note ul {
+  list-style: disc;
+}
+.prose-note ol {
+  list-style: decimal;
+}
+.prose-note li::marker {
+  color: rgb(var(--faint));
+}
+.prose-note li + li {
+  margin-top: 0.4em;
+}
+.prose-note li > ul,
+.prose-note li > ol {
+  margin-top: 0.4em;
+}
+.prose-note blockquote {
+  padding-left: 1.1em;
+  border-left: 2px solid rgb(var(--line));
+  color: rgb(var(--muted));
+  font-style: italic;
+}
+.prose-note blockquote > * + * {
+  margin-top: 0.7em;
+}
+.prose-note code {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: rgb(var(--surface-2));
+  color: rgb(var(--ink));
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.855em;
+}
+.prose-note pre {
+  overflow-x: auto;
+  padding: 14px 16px;
+  border: 1px solid rgb(var(--hairline));
+  border-radius: 10px;
+  background: rgb(var(--surface-2));
+  line-height: 1.6;
+}
+.prose-note pre code {
+  padding: 0;
+  background: none;
+  font-size: 13px;
+  color: rgb(var(--body));
+}
+.prose-note hr {
+  margin-top: 2.2em;
+  margin-bottom: 2.2em;
+  border: 0;
+  border-top: 1px solid rgb(var(--hairline));
+}
+.prose-note img,
+.prose-note video {
+  width: 100%;
+  border: 1px solid rgb(var(--hairline));
+  border-radius: 10px;
+}
+.prose-note table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.prose-note th,
+.prose-note td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgb(var(--hairline));
+  text-align: left;
+}
+.prose-note th {
+  color: rgb(var(--ink));
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.prose-note figcaption,
+.prose-note small {
+  display: block;
+  color: rgb(var(--muted));
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+}
+
 /* ── Clash hero collectible cards (3D tilt + parallax + holo foil) ── */
 .hero-card {
   --rx: 0deg;

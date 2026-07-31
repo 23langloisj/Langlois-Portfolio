@@ -11,9 +11,11 @@ import {
   FiMoon,
   FiCoffee,
   FiMapPin,
+  FiEdit3,
 } from 'react-icons/fi'
 import { useSiteNav, SECTIONS, EXTERNAL } from '../lib/useSiteNav'
 import { useTheme } from '../lib/theme'
+import { thoughts } from '../lib/thoughts'
 
 const Kbd = ({ children }: { children: ReactNode }) => (
   <kbd className="rounded border border-hairline bg-surface-2 px-1.5 py-0.5 font-mono text-[10px] leading-none text-muted">
@@ -92,6 +94,11 @@ const CommandPalette = () => {
             />
           ))}
           <Item
+            icon={<FiEdit3 size={15} />}
+            label="Thoughts"
+            onSelect={() => run(() => go('/thoughts'))}
+          />
+          <Item
             icon={<FiCoffee size={15} />}
             label="The kitchen"
             onSelect={() => run(() => go('/sheflang'))}
@@ -102,6 +109,25 @@ const CommandPalette = () => {
             onSelect={() => run(() => go('/travel'))}
           />
         </Command.Group>
+
+        {thoughts.length > 0 && (
+          <Command.Group heading="Read">
+            {thoughts.slice(0, 6).map((entry) => (
+              <Item
+                key={entry.slug}
+                icon={
+                  entry.icon ? (
+                    <span className="text-[15px] leading-none">{entry.icon}</span>
+                  ) : (
+                    <FiFileText size={15} />
+                  )
+                }
+                label={entry.title}
+                onSelect={() => run(() => go(`/thoughts/${entry.slug}`))}
+              />
+            ))}
+          </Command.Group>
+        )}
 
         <Command.Group heading="Links">
           <Item

@@ -18,7 +18,7 @@ export const EXTERNAL = {
   linkedin: 'https://www.linkedin.com/in/jacob-langlois/',
   instagram: 'https://www.instagram.com/jake.langlois1/',
   email: 'mailto:langlois.j@northeastern.edu',
-  resume: 'Langlois_Resume.pdf',
+  resume: '/Langlois_Resume.pdf',
 }
 
 /** Shared navigation used by the navbar, command palette, and hero. */

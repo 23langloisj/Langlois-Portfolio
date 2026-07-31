@@ -32,7 +32,7 @@ const Contact = () => {
               {email}
             </a>
             <a
-              href="Langlois_Resume.pdf"
+              href="/Langlois_Resume.pdf"
               download
               className="inline-flex items-center gap-1.5 rounded-md border border-inverse-fg/20 px-4 py-2.5 text-[14px] font-medium text-inverse-fg transition-colors hover:bg-inverse-fg/10"
             >
